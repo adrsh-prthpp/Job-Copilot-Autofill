@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Copilot Autofill Settings</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="settings-page">
+    <main>
+      <h1>Job Copilot Autofill Settings</h1>
+      <p class="description">
+        Edit your local profile and saved application answers. These values stay in Chrome storage on this browser.
+      </p>
+
+      <form id="settingsForm">
+        <section class="settings-card">
+          <h2>Profile</h2>
+          <div id="profileFields" class="settings-grid"></div>
+        </section>
+
+        <section class="settings-card">
+          <h2>Saved Answers</h2>
+          <div id="answerFields" class="settings-grid"></div>
+        </section>
+
+        <div class="settings-actions">
+          <button type="submit">Save Settings</button>
+          <button id="resetButton" class="secondary" type="button">Reset to Defaults</button>
+        </div>
+      </form>
+
+      <section class="status" aria-live="polite">
+        <h2>Status</h2>
+        <p id="settingsStatus">Ready.</p>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

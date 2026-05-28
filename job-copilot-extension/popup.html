@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Copilot Autofill</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="popup">
+      <h1>Job Copilot Autofill</h1>
+      <p class="description">
+        Scan this page, review suggested matches, then choose which confidence levels to fill.
+      </p>
+
+      <div class="actions">
+        <button id="scanButton" type="button">Scan Page</button>
+        <label class="select-field" for="confidenceSelect">
+          Fill confidence
+          <select id="confidenceSelect">
+            <option value="high">High only</option>
+            <option value="medium">High + Medium</option>
+            <option value="low">High + Medium + Low</option>
+          </select>
+        </label>
+        <button id="fillButton" type="button">Fill Selected Confidence</button>
+        <button id="settingsButton" class="secondary" type="button">Open Settings</button>
+      </div>
+
+      <section class="status" aria-live="polite">
+        <h2>Status</h2>
+        <p id="statusText">Ready.</p>
+      </section>
+
+      <section class="results">
+        <h2>Matched Fields</h2>
+        <div id="resultsList" class="results-list">
+          <p class="empty">Scan a page to see suggestions.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

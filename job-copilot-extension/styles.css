@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  margin: 0;
+  color: #1f2933;
+  background: #f7f9fb;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.popup {
+  padding: 16px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.description {
+  margin: 0 0 16px;
+  color: #52616f;
+  line-height: 1.4;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 12px;
+  color: #ffffff;
+  background: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.actions {
+  display: grid;
+  gap: 8px;
+}
+
+.select-field {
+  display: grid;
+  gap: 5px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.select-field select {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 9px 10px;
+  color: #1f2933;
+  background: #ffffff;
+  font: inherit;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button.secondary {
+  color: #1f2933;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+}
+
+button.secondary:hover {
+  background: #edf2f7;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: wait;
+}
+
+.status,
+.results,
+.settings-card {
+  margin-top: 14px;
+  padding: 10px;
+  border: 1px solid #d8e0e8;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.status h2,
+.results h2,
+.settings-card h2 {
+  margin: 0 0 6px;
+  color: #52616f;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#statusText {
+  min-height: 38px;
+  margin: 0;
+  line-height: 1.35;
+  white-space: pre-line;
+}
+
+.results-list {
+  display: grid;
+  gap: 8px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.result-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  background: #f8fafc;
+}
+
+.result-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.field-context {
+  margin: 0;
+  color: #1f2933;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.field-detail,
+.empty {
+  margin: 0;
+  color: #52616f;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 2px 7px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge.high {
+  background: #15803d;
+}
+
+.badge.medium {
+  background: #b45309;
+}
+
+.badge.low {
+  background: #64748b;
+}
+
+.settings-page {
+  width: auto;
+  min-width: 320px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.settings-page h1 {
+  font-size: 24px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.form-field {
+  display: grid;
+  gap: 5px;
+}
+
+.form-field label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-field input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 9px 10px;
+  color: #1f2933;
+  background: #ffffff;
+  font: inherit;
+}
+
+.settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.settings-actions button {
+  width: auto;
+  min-width: 150px;
+}
