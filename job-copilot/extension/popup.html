@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Copilot Autofill</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="popup">
+      <h1>Job Copilot Autofill</h1>
+      <p class="description">
+        Scan structured application fields, preview matches, and fill only what you approve.
+      </p>
+
+      <div class="actions">
+        <button id="scanButton" type="button">Scan Page</button>
+        <button id="fillTextButton" type="button">Fill High Confidence Text Fields</button>
+        <button id="fillStructuredButton" type="button">Fill High Confidence Dropdowns/Radios</button>
+        <button id="fillAllButton" type="button">Fill All High Confidence</button>
+        <button id="fillMediumButton" class="secondary" type="button">Fill Selected Medium Confidence</button>
+        <button id="fillSensitiveButton" class="secondary danger" type="button">Fill Selected Sensitive Fields</button>
+        <button id="testBackendButton" class="secondary" type="button">Test Backend</button>
+        <button id="askLlmButton" class="secondary" type="button">Ask LLM</button>
+        <button id="fillLlmButton" class="secondary" type="button" disabled>Fill Selected LLM Suggestions Later</button>
+        <button id="settingsButton" class="secondary" type="button">Open Settings</button>
+      </div>
+
+      <section class="results">
+        <h2>Documents / RAG</h2>
+        <label class="select-field" for="documentTypeSelect">
+          Document type
+          <select id="documentTypeSelect">
+            <option value="technical_resume">Technical Resume</option>
+            <option value="sales_resume">Sales Resume</option>
+            <option value="leadership_resume">Leadership Resume</option>
+            <option value="general_resume">General Resume</option>
+            <option value="projects">Projects</option>
+            <option value="personal_context">Personal Context</option>
+            <option value="saved_answers">Saved Answers</option>
+            <option value="portfolio">Portfolio</option>
+            <option value="transcript">Transcript</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <input id="documentUpload" class="file-input" type="file" multiple accept=".pdf,.txt,.md">
+        <button id="uploadDocumentsButton" class="secondary" type="button">Upload Documents</button>
+        <textarea id="jobDescriptionInput" rows="4" placeholder="Optional job description"></textarea>
+        <button id="askRagButton" class="secondary" type="button">Ask Resume RAG</button>
+      </section>
+
+      <section class="status" aria-live="polite">
+        <h2>Status</h2>
+        <p id="statusText">Ready.</p>
+      </section>
+
+      <section class="results">
+        <h2>Text Field Matches</h2>
+        <div id="textMatches" class="results-list">
+          <p class="empty">Scan a page to see suggestions.</p>
+        </div>
+      </section>
+
+      <section class="results">
+        <h2>Dropdown/Select Matches</h2>
+        <div id="selectMatches" class="results-list"></div>
+      </section>
+
+      <section class="results">
+        <h2>Radio/Multiple-Choice Matches</h2>
+        <div id="radioMatches" class="results-list"></div>
+      </section>
+
+      <section class="results">
+        <h2>Custom Dropdown/Listbox Matches</h2>
+        <div id="customDropdownMatches" class="results-list"></div>
+      </section>
+
+      <section class="results">
+        <h2>Manual Review Required</h2>
+        <div id="manualReview" class="results-list"></div>
+      </section>
+
+      <section class="results sensitive-section">
+        <h2>Sensitive / Voluntary Fields</h2>
+        <div id="sensitiveFields" class="results-list"></div>
+      </section>
+
+      <section class="results">
+        <h2>LLM Suggestions</h2>
+        <div id="llmSuggestions" class="results-list">
+          <p class="empty">Ask LLM after scanning to preview backend suggestions.</p>
+        </div>
+      </section>
+
+      <section class="results">
+        <h2>RAG Answers</h2>
+        <div id="ragAnswers" class="results-list">
+          <p class="empty">Ask Resume RAG after scanning to preview grounded answers.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

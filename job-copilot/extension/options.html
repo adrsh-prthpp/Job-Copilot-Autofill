@@ -24,6 +24,21 @@
           <div id="answerFields" class="settings-grid"></div>
         </section>
 
+        <section class="settings-card">
+          <h2>Backend</h2>
+          <div class="settings-grid">
+            <label class="checkbox-field">
+              <input id="backendEnabled" type="checkbox">
+              Enable local backend matching
+            </label>
+
+            <div class="form-field">
+              <label for="backendUrl">Backend URL</label>
+              <input id="backendUrl" type="url" value="http://127.0.0.1:8000">
+            </div>
+          </div>
+        </section>
+
         <div class="settings-actions">
           <button type="submit">Save Settings</button>
           <button id="resetButton" class="secondary" type="button">Reset to Defaults</button>

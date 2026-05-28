@@ -2,12 +2,16 @@
   "manifest_version": 3,
   "name": "Job Copilot Autofill",
   "version": "1.0.0",
-  "description": "A local MVP that scans job application fields and fills high-confidence matches from saved profile data.",
+  "description": "A local MVP that scans text, dropdown, radio, and choice fields for job application autofill.",
   "action": {
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
   "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
